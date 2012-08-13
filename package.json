@@ -1,0 +1,11 @@
+{ "name": "flates"
+, "version": "0.0.1"
+, "main": "flates.js"
+, "scripts": { "test": "./node_modules/.bin/tap ./test" }
+,  "devDependencies": { "tap": "*" }
+, "engines": { "node": "~0.8" }
+, "repository":
+  { "type": "git"
+  , "url": "git://github.com/nrn/flates.git"
+  }
+}
