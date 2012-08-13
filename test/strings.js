@@ -2,6 +2,7 @@ test = require('tap').test
 f = require('../flates')
 
 function build (obj) {
+  if (!obj) return obj
   if (Array.isArray(obj)) return f.ul(obj.map(build).map(f.li))
   else if (typeof obj === 'object') {
       return f.dl(Object.keys(obj).map( function(key) {

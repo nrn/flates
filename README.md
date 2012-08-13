@@ -10,7 +10,7 @@ set the inner html of a DOM element to.
 
 ```javascript
 f = Flates()
-f.div({ id: 'foo' }, f.p('Nested? ' + f.strong('Weeeeeeeeeeee')))
+f.div({ id: 'foo' }, f.p('This Works? ' + f.strong('Weeeeeeeeeeee')))
 // <div id="foo"><p>This Works? <strong>Weeeeeeeeeeee</strong></p></div>
 ```
 
