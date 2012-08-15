@@ -41,7 +41,7 @@ function Flates () {
   , 'area'
   , 'article'
   , 'aside'
-  , 'audoi'
+  , 'audio'
   , 'bdi'
   , 'bdo'
   , 'blockquote'
