@@ -14,11 +14,12 @@ function build (obj) {
 thing = { test: { foo: 'stuff', bar: [ 0, 1, { nest: 'deep' } ] }, two: 2 }
 
 test('Returned HTML', function (t) {
-  t.plan(2)
+  t.plan(3)
   t.equal(f.d(), '<!DOCTYPE html>', 'f.d, doctype')
   t.equal(build(thing),
     '<dl><dt>test</dt><dd><dl><dt>foo</dt><dd>stuff</dd><dt>bar</dt><dd>' +
       '<ul><li>0</li><li>1</li><li><dl><dt>nest</dt><dd>deep</dd></dl></li></ul></dd>' +
       '</dl></dd><dt>two</dt><dd>2</dd></dl>',
     'build thing')
+  t.equal(f.div(), '<div></div>')
 })

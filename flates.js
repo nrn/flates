@@ -6,6 +6,7 @@ function Flates () {
     if (stringNumArray(attr)) con = attr
     else attributes = attrStr(attr)
     if (Array.isArray(con)) con = con.join('')
+    if (typeof con === 'undefined') con = ''
     return '<' + tag + attributes + '>' + con + '</' + tag + '>'
   }
 
