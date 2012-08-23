@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/nrn/flates.png)](http://travis-ci.org/nrn/flates)
 # Flates
 
 Flates is simple functional templating in javascript.
