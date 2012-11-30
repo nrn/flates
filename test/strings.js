@@ -2,8 +2,8 @@ test = require('tap').test
 f = require('../flates')
 
 function build (obj) {
-  if (!obj) return obj
-  if (Array.isArray(obj)) return f.ul(obj.map(build).map(f.li))
+  if (typeof obj === 'undefined') return obj
+  if (Array.isArray(obj)) return f.ul(obj.map(build).map(first(f.li)))
   else if (typeof obj === 'object') {
       return f.dl(Object.keys(obj).map( function(key) {
           return f.dt(key) + f.dd(build(obj[key]))
@@ -11,10 +11,16 @@ function build (obj) {
   } else return obj
 }
 
+function first (func) {
+  return function (item) {
+    return func(item)
+  }
+}
+
 thing = { test: { foo: 'stuff', bar: [ 0, 1, { nest: 'deep' } ] }, two: 2 }
 
 test('Returned HTML', function (t) {
-  t.plan(3)
+  t.plan(5)
   t.equal(f.d(), '<!DOCTYPE html>', 'f.d, doctype')
   t.equal(build(thing),
     '<dl><dt>test</dt><dd><dl><dt>foo</dt><dd>stuff</dd><dt>bar</dt><dd>' +
@@ -22,4 +28,6 @@ test('Returned HTML', function (t) {
       '</dl></dd><dt>two</dt><dd>2</dd></dl>',
     'build thing')
   t.equal(f.div(), '<div></div>')
+  t.equal(f.div('multiple', 'things'), '<div>multiplethings</div>')
+  t.equal(f.div({ id: 'attr'}, 'multiple', 'things'), '<div id="attr">multiplethings</div>')
 })

@@ -1,5 +1,5 @@
 { "name": "flates"
-, "version": "0.0.2"
+, "version": "0.0.3"
 , "main": "flates.js"
 , "scripts": { "test": "./node_modules/.bin/tap ./test" }
 ,  "devDependencies": { "tap": "*" }

@@ -1,11 +1,15 @@
 // Flates, composable functions to build html strings.
 function Flates () {
 
-  function f (tag, attr, con) {
+  function f (tag, attr) {
+    var con = arrayify(arguments)
+    con.shift()
     var attributes = ''
-    if (stringNumArray(attr)) con = attr
-    else attributes = attrStr(attr)
-    if (Array.isArray(con)) con = con.join('')
+    if (!stringNumArray(attr)) {
+      con.shift()
+      attributes = attrStr(attr)
+    }
+    con = flatten(con)
     if (typeof con === 'undefined') con = ''
     return '<' + tag + attributes + '>' + con + '</' + tag + '>'
   }
@@ -23,10 +27,18 @@ function Flates () {
   }
 
   function stringNumArray (item) {
-    if (typeof item === 'string') return item
-    if (typeof item === 'number') return item
-    if (Array.isArray(item)) return item
-    return undefined
+    if (typeof item === 'string') return true
+    if (typeof item === 'number') return true
+    if (Array.isArray(item)) return true
+    return false
+  }
+  function arrayify (arr) {
+    return Array.prototype.slice.apply(arr)
+  }
+
+  function flatten (arr) {
+    if (Array.isArray(arr)) return arr.map(flatten).join('')
+    return arr
   }
 
   function doctype (type) {
@@ -75,7 +87,7 @@ function Flates () {
   , 'iframe'
   , 'ins'
   , 'kbd'
-  , 'lable'
+  , 'label'
   , 'legend'
   , 'li'
   , 'map'
