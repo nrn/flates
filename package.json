@@ -10,10 +10,10 @@
 , "testling":
   { "files": [ "t/*.js" ]
   , "browsers":
-    { "chrome": [ "latest" ]
-    , "firefox": [ "latest" ]
+    { "chrome": [ 24, "canary" ]
+    , "firefox": [ "latest", "nightly" ]
     , "safari": [ "latest" ]
-    , "ie": [ "latest" ]
+    , "ie": [ "10" ]
     , "opera": [ "latest" ]
     }
   }
