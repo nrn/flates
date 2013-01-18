@@ -1,10 +1,22 @@
 { "name": "flates"
-, "version": "0.0.3"
+, "version": "0.0.4"
 , "author": "Nick Niemeir <nick.niemeir@gmail.com> (http://nrn.io)"
+, "description": "Simple functions to build html strings."
+, "keywords": [ "HTML", "template", "templates", "functional" ]
 , "main": "flates.js"
-, "scripts": { "test": "./node_modules/.bin/tap ./test" }
-,  "devDependencies": { "tap": "*" }
-, "engines": { "node": "~0.8" }
+, "scripts": { "test": "for f in ./t/*.js; do node $f; done" }
+, "devDependencies": { "tape": "*" }
+, "engines": { "node": ">0.6" }
+, "testling":
+  { "files": "t/*.js"
+  , "browsers":
+    { "chrome": "latest"
+    , "firefox": "latest"
+    , "safari": "latest"
+    , "ie": "latest"
+    , "opera": "latest"
+    }
+  }
 , "repository":
   { "type": "git"
   , "url": "git://github.com/nrn/flates.git"

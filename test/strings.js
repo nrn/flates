@@ -1,5 +1,5 @@
-test = require('tap').test
-f = require('../flates')
+var test = require('tape')
+  , f = require('../flates')
 
 function build (obj) {
   if (typeof obj === 'undefined') return obj
@@ -17,7 +17,7 @@ function first (func) {
   }
 }
 
-thing = { test: { foo: 'stuff', bar: [ 0, 1, { nest: 'deep' } ] }, two: 2 }
+var thing = { test: { foo: 'stuff', bar: [ 0, 1, { nest: 'deep' } ] }, two: 2 }
 
 test('Returned HTML', function (t) {
   t.plan(5)
@@ -31,3 +31,4 @@ test('Returned HTML', function (t) {
   t.equal(f.div('multiple', 'things'), '<div>multiplethings</div>')
   t.equal(f.div({ id: 'attr'}, 'multiple', 'things'), '<div id="attr">multiplethings</div>')
 })
+

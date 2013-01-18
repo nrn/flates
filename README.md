@@ -1,6 +1,11 @@
 # Flates
 
 Flates is simple functional templating in javascript.
+
+[![browser support](http://ci.testling.com/nrn/flates.png)](http://ci.testling.com/nrn/flates)
+
+## f.<tagName>([attributes, ]innerHTML...)
+
 Each function takes an optional attribute object which is just the
 { key: 'value' } representation of key="value" pairs you want
 as attributes, and the contents of the element, and returns a
@@ -8,8 +13,9 @@ string of html.  This can be used server side to build the whole, or parts
 of the html to respond to a request with, or client side to append or
 set the inner html of a DOM element to.
 
+
 ```javascript
-f = Flates()
+var f = Flates()
 f.div({ id: 'foo' }, f.p('This Works? ' + f.strong('Weeeeeeeeeeee')))
 // <div id="foo"><p>This Works? <strong>Weeeeeeeeeeee</strong></p></div>
 ```
