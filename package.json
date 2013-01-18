@@ -10,11 +10,11 @@
 , "testling":
   { "files": [ "t/*.js" ]
   , "browsers":
-    { "chrome": "latest"
-    , "firefox": "latest"
-    , "safari": "latest"
-    , "ie": "latest"
-    , "opera": "latest"
+    { "chrome": [ "latest" ]
+    , "firefox": [ "latest" ]
+    , "safari": [ "latest" ]
+    , "ie": [ "latest" ]
+    , "opera": [ "latest" ]
     }
   }
 , "repository":
