@@ -10,12 +10,15 @@
 , "testling":
   { "files": [ "t/*.js" ]
   , "browsers":
-    { "chrome": [ 24, "canary" ]
-    , "firefox": [ "latest", "nightly" ]
-    , "safari": [ "latest" ]
-    , "ie": [ "10" ]
-    , "opera": [ "latest" ]
-    }
+    [ "chrome/latest"
+    , "chrome/canary"
+    , "firefox/latest"
+    , "firefox/nightly"
+    , "opera/latest"
+    , "opera/next"
+    , "safari/latest"
+    , "ie/latest"
+    ]
   }
 , "repository":
   { "type": "git"
