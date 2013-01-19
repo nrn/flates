@@ -2,9 +2,8 @@
 function Flates () {
 
   function f (tag, attr) {
-    var con = arrayify(arguments)
-    con.shift()
-    var attributes = ''
+    var con = Array.prototype.slice.call(arguments, 1)
+      , attributes = ''
     if (!stringNumArray(attr)) {
       con.shift()
       attributes = attrStr(attr)
@@ -20,7 +19,7 @@ function Flates () {
   }
 
   function attrStr (attrObj) {
-    if (typeof attrObj !== 'object') return ''
+    if (typeof attrObj !== 'object' || !attrObj) return ''
     return ' ' + Object.keys(attrObj).map(function (key) {
       return key + '="' + attrObj[key] + '"'
     }).join(' ')
@@ -31,9 +30,6 @@ function Flates () {
     if (typeof item === 'number') return true
     if (Array.isArray(item)) return true
     return false
-  }
-  function arrayify (arr) {
-    return Array.prototype.slice.apply(arr)
   }
 
   function flatten (arr) {

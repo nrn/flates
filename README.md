@@ -4,7 +4,7 @@ Flates is simple functional templating in javascript.
 
 [![browser support](http://ci.testling.com/nrn/flates.png)](http://ci.testling.com/nrn/flates)
 
-## f.<tagName>([attributes, ]innerHTML...)
+## f(tag[, attributes, innerHTML...]) || f.tag([attributes, innerhtml])
 
 Each function takes an optional attribute object which is just the
 { key: 'value' } representation of key="value" pairs you want

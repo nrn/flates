@@ -1,5 +1,5 @@
 { "name": "flates"
-, "version": "0.0.4"
+, "version": "0.0.5"
 , "author": "Nick Niemeir <nick.niemeir@gmail.com> (http://nrn.io)"
 , "description": "Simple functions to build html strings."
 , "keywords": [ "HTML", "template", "templates", "functional" ]
@@ -10,15 +10,12 @@
 , "testling":
   { "files": [ "t/*.js" ]
   , "browsers":
-    [ "chrome/latest"
-    , "chrome/canary"
-    , "firefox/latest"
-    , "firefox/nightly"
-    , "opera/latest"
-    , "opera/next"
-    , "safari/latest"
-    , "ie/latest"
-    ]
+    { "chrome": [ "23", "canary" ]
+    , "firefox": [ "17", "nightly" ]
+    , "safari": [ "5.1" ]
+    , "ie": [ "10" ]
+    , "opera": [ "12", "next" ]
+    }
   }
 , "repository":
   { "type": "git"

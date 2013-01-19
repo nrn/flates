@@ -2,10 +2,9 @@ var test = require('tape')
   , f = require('../flates')
 
 function build (obj) {
-  if (typeof obj === 'undefined') return obj
   if (Array.isArray(obj)) return f.ul(obj.map(build).map(first(f.li)))
-  else if (typeof obj === 'object') {
-      return f.dl(Object.keys(obj).map( function(key) {
+  else if (typeof obj === 'object' && obj) {
+      return f.dl(Object.keys(obj).map(function(key) {
           return f.dt(key) + f.dd(build(obj[key]))
         }))
   } else return obj
