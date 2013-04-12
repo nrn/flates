@@ -2,7 +2,7 @@
 
 Flates is simple functional templating in javascript.
 
-[![browser support](http://ci.testling.com/nrn/flates.png)](http://ci.testling.com/nrn/flates)
+[![browser support](https://ci.testling.com/nrn/flates.png)](https://ci.testling.com/nrn/flates)
 
 ## f(tag[, attributes, innerHTML...]) || f.tag([attributes, innerhtml])
 
